@@ -1,0 +1,443 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: "Poppins", sans-serif;
+	/* font-family: 'Cairo', sans-serif; */
+}
+
+a {
+	text-decoration: none;
+	color: #222;
+}
+
+/* ---------------------------- Global Rules Of Container ------------------------------------------- */
+.container {
+	padding-left: 15px;
+	padding-right: 15px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* Small Screen */
+@media (min-width: 768px) {
+	.container {
+		width: 750px;
+	}
+}
+
+/* medium Screen */
+@media (min-width: 992px) {
+	.container {
+		width: 970px;
+	}
+}
+
+/* large Screen */
+@media (min-width: 1200px) {
+	.container {
+		width: 1170px;
+	}
+}
+*
+
+
+/* ? ------------------------ this is for remove default eye from the password input */
+input[type=password]::-ms-reveal,
+input[type=password]::-ms-clear
+{
+  display: none;
+}
+
+/* --------------------------------------------- Start Header ----------------------------------------------- */
+
+header {
+	width: 100%;
+	height: 80px;
+	position: fixed;
+	left: 0;
+	top: 0;
+	transition: all 0.3s ease-in-out;
+}
+
+header .container {
+	display: flex;
+	height: 100%;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.done {
+	background-color: #7c2ae8;
+}
+
+header .container .logo h4 {
+	font-size: 25px;
+	font-weight: 400;
+	letter-spacing: 1px;
+	cursor: pointer;
+	color: #fff;
+}
+
+header .container .nav-bar {
+	display: flex;
+	list-style: none;
+	gap: 20px;
+}
+
+header .container .nav-bar li {
+	/* width: 70px; */
+	height: 30px;
+	cursor: pointer;
+	font-size: 15px;
+	text-transform: capitalize;
+	text-align: center;
+	line-height: 30px;
+	transition: all 0.3s ease-in-out;
+	letter-spacing: 0.5px;
+	color: #fff;
+	position: relative;
+}
+
+header .container .nav-bar li::before {
+	content: "";
+	width: 0;
+	height: 2px;
+	background-color: #fff;
+	position: absolute;
+	bottom: -4px;
+	left: 50%;
+	transform: translateX(-50%);
+	transition: all 0.3s ease-in-out;
+}
+
+header .container .nav-bar li:hover:before {
+	width: 100%;
+}
+
+header .container .login p {
+	cursor: pointer;
+	text-transform: capitalize;
+	font-size: 18px;
+	font-weight: 500;
+	padding: 8px 25px;
+	border: 1px solid #fff;
+	border-radius: 6px;
+	color: #fff;
+	letter-spacing: 0.5px;
+	transition: all 0.3s ease-in-out;
+}
+
+header .container .login p:hover {
+	color: #333;
+	background-color: #fff;
+}
+
+/* --------------------------------------------- End Header ----------------------------------------------- */
+
+/* !--------------------------------------------------------------------------------------------------------------------------- */
+
+/* ---------------------------------------------  Start Landing ----------------------------------------------- */
+
+.landing {
+	height: 100vh;
+	background-image: linear-gradient(#7c2ae88c, #7c2ae81f),
+		url("../images/wallpaper_2.jpg");
+	background-size: 100% 100vh;
+}
+
+/* --------------------------------------------- End Landing ----------------------------------------------- */
+
+/* !--------------------------------------------------------------------------------------------------------------------------- */
+
+/* ---------------------------------------------  Start Footer ----------------------------------------------- */
+
+footer .container h3 {
+	font-size: 25px;
+	padding: 20px 0;
+	text-transform: capitalize;
+	color: #7c2ae8;
+}
+
+footer .container p {
+	margin-bottom: 20px;
+	text-transform: capitalize;
+	letter-spacing: 0.3px;
+	line-height: 1.5;
+	font-weight: 300;
+}
+
+/* --------------------------------------------- End Footer ----------------------------------------------- */
+
+/* !--------------------------------------------------------------------------------------------------------------------------- */
+
+/* ---------------------------------------------  Start Login And Signup ----------------------------------------------- */
+
+.login-signup {
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-color: #000000d0;
+	width: 100%;
+	height: 100vh;
+	display: none;
+	justify-content: center;
+	align-items: center;
+	z-index: 101;
+}
+
+.login-signup .login {
+	min-width: 340px;
+	background-color: #fff;
+	position: relative;
+	padding-left: 30px;
+	padding-right: 30px;
+	border-radius: 10px;
+	overflow: hidden;
+	display: none;
+}
+
+.login-signup .login i.fa-xmark {
+	color: #333;
+	position: absolute;
+	right: 15px;
+	top: 15px;
+	cursor: pointer;
+}
+
+.login-signup .login i.fa-xmark:hover {
+	color: #999;
+}
+
+.login-signup .login h2 {
+	text-align: center;
+	letter-spacing: 1px;
+	font-size: 25px;
+	margin: 25px;
+}
+
+.login-signup .login .email,
+.login-signup .login .password {
+	position: relative;
+	width: 100%;
+	margin-bottom: 35px;
+}
+
+.login-signup .login .password {
+	margin-bottom: 5px;
+}
+
+.login-signup .login .email i,
+.login-signup .login .password i.fa-lock {
+	position: absolute;
+	top: 50%;
+	left: 10px;
+	transform: translateY(-50%);
+	font-size: 18px;
+	color: #777;
+}
+
+.login-signup .login .password #passInp,
+.login-signup .login .email #emailInp {
+	width: 100%;
+	height: 40px;
+	padding-left: 40px;
+	outline: none;
+	border: none;
+	border-bottom: 2px solid #999;
+}
+
+.login-signup .login .password #passInp:focus,
+.login-signup .login .email #emailInp:focus {
+	border-bottom: 2px solid #a35ffc;
+}
+
+.login-signup .login .password i.fa-eye,
+.login-signup .login .password i.fa-eye-slash {
+	position: absolute;
+	top: 50%;
+	right: 10px;
+	transform: translateY(-50%);
+	font-size: 16px;
+	cursor: pointer;
+	color: #999;
+	padding: 10px 5px;
+}
+
+.login-signup .login .remember {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 25px;
+}
+
+.login-signup .login .remember .checked {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+}
+
+.login-signup .login .remember .checked label {
+	font-size: 11px;
+	font-weight: 400;
+	user-select: none;
+}
+
+.login-signup .login .remember .forget a {
+	color: #7c2ae8;
+	font-size: 12px;
+	font-weight: 300;
+}
+
+.login-signup .login .remember .forget a:hover {
+	text-decoration: underline;
+}
+
+.login-signup .login .log-now {
+	width: 100%;
+	height: 40px;
+	border-radius: 8px;
+	border: none;
+	background-color: #7c2ae8;
+	color: #fff;
+	font-size: 16px;
+	font-weight: 500;
+	margin-bottom: 8px;
+	cursor: pointer;
+	transition-duration: 0.2s;
+}
+
+.login-signup .login .log-now:hover {
+	background-color: #9849ff;
+}
+
+.login-signup .login .last-elem {
+	font-size: 12px;
+	text-align: center;
+	text-transform: capitalize;
+	letter-spacing: 0.2px;
+	margin-bottom: 20px;
+}
+
+.login-signup .login .last-elem span {
+	color: #7c2ae8;
+	cursor: pointer;
+	user-select: none;
+}
+.login-signup .login .last-elem span:hover {
+	text-decoration: underline;
+}
+
+/* todo------------------------------------------------------------------------------------------------------------------------ */
+/* !----------------------------------------------------------------------------------------- */
+/* ?------------------------------------------------------------------------------------------- */
+
+.login-signup .signup {
+	min-width: 340px;
+	background-color: #fff;
+	position: relative;
+	padding-left: 30px;
+	padding-right: 30px;
+	border-radius: 10px;
+	overflow: hidden;
+	display: none;
+}
+
+.login-signup .signup i.fa-xmark {
+	color: #333;
+	position: absolute;
+	right: 15px;
+	top: 15px;
+	cursor: pointer;
+}
+
+.login-signup .signup i.fa-xmark:hover {
+	color: #999;
+}
+
+.login-signup .signup h2 {
+	text-align: center;
+	letter-spacing: 1px;
+	font-size: 25px;
+	margin: 25px;
+}
+
+.login-signup .signup .email,
+.login-signup .signup .password {
+	position: relative;
+	width: 100%;
+	margin-bottom: 35px;
+}
+
+.login-signup .signup .email i,
+.login-signup .signup .password i.fa-lock {
+	position: absolute;
+	top: 50%;
+	left: 10px;
+	transform: translateY(-50%);
+	font-size: 18px;
+	color: #777;
+}
+
+.login-signup .signup .password #passInpTwo,
+.login-signup .signup .password #passInpThree,
+.login-signup .signup .email #emailInpTwo {
+	width: 100%;
+	height: 40px;
+	padding-left: 40px;
+	outline: none;
+	border: none;
+	border-bottom: 1px solid #7c2ae8;
+}
+
+.login-signup .signup .password i.fa-eye,
+.login-signup .signup .password i.fa-eye-slash {
+	position: absolute;
+	top: 50%;
+	right: 10px;
+	transform: translateY(-50%);
+	font-size: 16px;
+	cursor: pointer;
+	color: #999;
+	padding: 10px 5px;
+}
+
+.login-signup .signup .log-now {
+	width: 100%;
+	height: 40px;
+	border-radius: 8px;
+	border: none;
+	background-color: #7c2ae8;
+	color: #fff;
+	font-size: 16px;
+	font-weight: 500;
+	margin-bottom: 8px;
+	cursor: pointer;
+	transition-duration: 0.2s;
+}
+
+.login-signup .signup .log-now:hover {
+	background-color: #9849ff;
+}
+
+.login-signup .signup .last-elem {
+	font-size: 12px;
+	text-align: center;
+	text-transform: capitalize;
+	letter-spacing: 0.2px;
+	margin-bottom: 20px;
+}
+
+.login-signup .signup .last-elem span {
+	color: #7c2ae8;
+	cursor: pointer;
+	user-select: none;
+}
+.login-signup .signup .last-elem span:hover {
+	text-decoration: underline;
+}
+
+.hello {
+	display: flex !important;
+	flex-direction: column;
+}
